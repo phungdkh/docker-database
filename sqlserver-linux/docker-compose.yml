@@ -1,0 +1,12 @@
+version: '3'
+services:
+  database:
+    image: "microsoft/mssql-server-linux:2017-latest"
+    env_file:
+      - database.env
+    volumes:
+      - mssql-db-data:/var/opt/mssql
+    ports:
+      - "1433:1433"
+volumes:
+  mssql-db-data:
